@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function download(data){
+            alert("下载的数据：" + data);
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn1");
+            oBtn.onclick = function(){
+                var oScript = document.createElement("script");
+                oScript.src = 'demo.js';
+                document.body.appendChild(oScript);
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- jsonp跨域原理，src无视同源协议
+jsonp跨域的数据必须是函数调用的形式
+jsonp跨域流程：1.先声明一个函数，这个函数有一个形参
+            2.在需要下载数据的时候，动态创建script标签，将标签属性设置成：下载数据的链接
+            3.当script插入到页面上的时候，就会调用已经封装好的函数，将我们需要的数据传过来 -->
+        <button id = 'btn1'>下载数据</button>
+
+   
+</body>
+</html>
