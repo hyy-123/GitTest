@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="单击" v-on:click="dolt">
+        <input type="button" value="鼠标移入" v-on:mouseenter="dolt">
+        <input type="button" value="双击" v-on:dblclick="dolt">
+        <input type="button" value="单击简写" @click="dolt">
+        <h2 @click="changeFood">{{food}}</h2>
+    </div>
+     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script>
+         var app = new Vue({
+             el:"#app",
+             data:{
+                 food:"奶香麦片鸡蛋粥"
+             },
+             methods:{
+                 dolt:function(){
+                    alert("写程序");
+                 },
+                 changeFood:function(){
+                    //alert(this.food);
+                    this.food+="好好吃！";
+                 }
+             }
+         })
+     </script>
+</body>
+</html>

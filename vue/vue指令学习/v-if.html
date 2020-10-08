@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="切换显示" @click="toggleIsShow">
+        <p v-if="isShow">我是程序员</p>
+        <p v-if="isShow">v-show修饰</p>
+        <p v-if="temperature>=35">热死啦！</p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                isShow:false,
+                temperature:35
+            },
+            methods:{
+                toggleIsShow:function(){
+                    this.isShow=!this.isShow;
+                }   
+            }
+        })
+    </script>
+</body>
+</html>
